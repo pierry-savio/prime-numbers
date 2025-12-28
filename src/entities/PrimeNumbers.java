@@ -7,6 +7,7 @@ public class PrimeNumbers {
 
 	private int range;
 	private List<Integer> primeNumbersOnRange = new ArrayList<>();
+	private int quantity;
 	private double densityOnRange;
 	
 	public PrimeNumbers(int range) {
@@ -26,6 +27,10 @@ public class PrimeNumbers {
 		
 		
 		return primeNumbersOnRange;
+	}
+	
+	public int getQuantity() {
+		return quantity;
 	}
 	
 	public double getDensityOnRange() {
