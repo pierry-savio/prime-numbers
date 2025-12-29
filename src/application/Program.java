@@ -14,13 +14,19 @@ public class Program {
 		
 		System.out.print("Range: ");
 		int range = scan.nextInt();
-		System.out.println();
-		System.out.println("Prime Numbers on range of " + range + ":");
-		System.out.println();
 		PrimeNumbers primeNumbers = new PrimeNumbers(range);
-		System.out.println("Primes: " + primeNumbers);
-		System.out.println("Quantity: " + primeNumbers.getQuantity());
-		System.out.println("Density: " + primeNumbers.getDensityOnRange() + "%");
+		System.out.println();
+		
+		if (range != 0) {
+			System.out.println("Prime Numbers on range of " + range + ":");
+			System.out.println();
+			System.out.println("Primes: " + primeNumbers);
+			System.out.println("Quantity: " + primeNumbers.getQuantity());
+			System.out.println("Density: " + primeNumbers.getDensityOnRange() + "%");
+		}
+		else {
+			primeNumbers.showInfitePrimeNumbers();
+		}
 		
 		scan.close();
 	}

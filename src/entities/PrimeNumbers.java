@@ -49,6 +49,32 @@ public class PrimeNumbers {
 		return primeNumbersOnRange;
 	}
 	
+	public void showInfitePrimeNumbers() {
+		
+		int n = 1;
+		
+		System.out.println("#" + n + " - 2");
+		n++;
+		
+		for (int i = 3; i>0; i+=2) {
+		
+			boolean prime = true;
+			
+			for (int j = i-1; j>2; j--) {
+	
+				if (i%j == 0) {
+					prime = false;
+				}
+			}
+			
+			if (prime) {
+				System.out.println("#" + n + " - " + i);
+				n++;
+			}
+		}
+		
+	}
+	
 	public int getQuantity() {
 		quantity = getPrimeNumbersOnRange().size();
 		return quantity;
