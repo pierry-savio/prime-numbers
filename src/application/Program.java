@@ -18,7 +18,9 @@ public class Program {
 		System.out.println("Prime Numbers on range of " + range + ":");
 		System.out.println();
 		PrimeNumbers primeNumbers = new PrimeNumbers(range);
-		System.out.println(primeNumbers);
+		System.out.println("Primes: " + primeNumbers);
+		System.out.println("Quantity: " + primeNumbers.getQuantity());
+		System.out.println("Density: " + primeNumbers.getDensityOnRange() + "%");
 		
 		scan.close();
 	}
