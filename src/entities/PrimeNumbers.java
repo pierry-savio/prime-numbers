@@ -92,8 +92,17 @@ public class PrimeNumbers {
 		
 		String primeNums = "";
 		
+		int count = 30;
+		
 		for (Integer i : primeNumbersOnRange) {
-			primeNums += i + ", ";
+			if (count > 0) {
+				primeNums += i + ", ";
+				count--;
+			}
+			else {
+				primeNums += "\n";
+				count = 30;
+			}
 		}
 		if (primeNums.length() >= 2) {
 			return primeNums.substring(0, primeNums.length()-2);
