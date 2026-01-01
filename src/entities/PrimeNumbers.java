@@ -12,6 +12,9 @@ public class PrimeNumbers {
 	
 	public PrimeNumbers(int range) {
 		this.range = range;
+		primeNumbersOnRange = getPrimeNumbersOnRange();
+		this.quantity = getQuantity();
+		this.densityOnRange = getDensityOnRange();
 	}
 	
 	public int getRange() {
