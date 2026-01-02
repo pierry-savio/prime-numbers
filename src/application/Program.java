@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.PrimeNumbers;
+import entities.PrimeNumbersOnRange;
 
 public class Program {
 
@@ -11,41 +11,19 @@ public class Program {
 		
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("Choose one option:");
-		System.out.println("1 - Prime Numbers on Range");
-		System.out.println("2 - Quantity of Primes");
-		System.out.print("N: ");
-		int option = scan.nextInt();
+	
+		System.out.print("Send a range: ");
+		int range = scan.nextInt();
 		System.out.println();
 		
-		if (option == 1) {
-		
-			System.out.print("Range: ");
-			int range = scan.nextInt();
-			PrimeNumbers primeNumbers = new PrimeNumbers(range);
-			System.out.println();
-			
-			if (range != 0) {
-				System.out.println("Prime Numbers on range of " + range + ":");
-				System.out.println();
-				System.out.println("Primes: " + primeNumbers);
-				System.out.println("Quantity: " + primeNumbers.getQuantity());
-				System.out.println("Density: " + primeNumbers.getDensityOnRange() + "%");
-			}
-			else {
-				primeNumbers.showInfitePrimeNumbers();
-			}
-		
-		}
-		else {
-			System.out.print("Quantity: ");
-			int range = scan.nextInt();
-			PrimeNumbers primeNumbers = new PrimeNumbers(range);
-			System.out.println();
-			primeNumbers.getNPrimeNumbers(100);
-			System.out.println(primeNumbers);
-		}
+		PrimeNumbersOnRange primeNumbersOnRange = new PrimeNumbersOnRange(range);
+		System.out.println("Primes:");
+		System.out.println("-----------------------------------------------------------------------------------------------");
+		System.out.println(primeNumbersOnRange);
+		System.out.println("-----------------------------------------------------------------------------------------------");
+		System.out.println("Range: " + primeNumbersOnRange.getRange());
+		System.out.println("Quantity: " + primeNumbersOnRange.getQuantity());
+		System.out.println("Density: " + primeNumbersOnRange.getDensity() + "%");
 		
 		scan.close();
 	}
