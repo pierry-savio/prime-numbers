@@ -12,20 +12,39 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("Range: ");
-		int range = scan.nextInt();
-		PrimeNumbers primeNumbers = new PrimeNumbers(range);
+		System.out.println("Choose one option:");
+		System.out.println("1 - Prime Numbers on Range");
+		System.out.println("2 - Quantity of Primes");
+		System.out.print("N: ");
+		int option = scan.nextInt();
 		System.out.println();
 		
-		if (range != 0) {
-			System.out.println("Prime Numbers on range of " + range + ":");
+		if (option == 1) {
+		
+			System.out.print("Range: ");
+			int range = scan.nextInt();
+			PrimeNumbers primeNumbers = new PrimeNumbers(range);
 			System.out.println();
-			System.out.println("Primes: " + primeNumbers);
-			System.out.println("Quantity: " + primeNumbers.getQuantity());
-			System.out.println("Density: " + primeNumbers.getDensityOnRange() + "%");
+			
+			if (range != 0) {
+				System.out.println("Prime Numbers on range of " + range + ":");
+				System.out.println();
+				System.out.println("Primes: " + primeNumbers);
+				System.out.println("Quantity: " + primeNumbers.getQuantity());
+				System.out.println("Density: " + primeNumbers.getDensityOnRange() + "%");
+			}
+			else {
+				primeNumbers.showInfitePrimeNumbers();
+			}
+		
 		}
 		else {
-			primeNumbers.showInfitePrimeNumbers();
+			System.out.print("Quantity: ");
+			int range = scan.nextInt();
+			PrimeNumbers primeNumbers = new PrimeNumbers(range);
+			System.out.println();
+			primeNumbers.getNPrimeNumbers(100);
+			System.out.println(primeNumbers);
 		}
 		
 		scan.close();

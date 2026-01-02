@@ -78,6 +78,39 @@ public class PrimeNumbers {
 		
 	}
 	
+	public List<Integer> getNPrimeNumbers(int quantity){
+		
+		this.quantity = quantity;
+		
+		primeNumbersOnRange = new ArrayList<>();
+		
+		if (quantity >= 1) {
+			primeNumbersOnRange.add(2);
+		}
+		
+		int i = 3;
+		
+		while (quantity > 1) {
+			
+			boolean prime = true;
+			
+			for (int j = i-1; j>2; j--) {
+	
+				if (i%j == 0) {
+					prime = false;
+				}
+			}
+			
+			if (prime) {
+				primeNumbersOnRange.add(i);
+				quantity--;
+			}
+			
+			i+=2;
+		}
+		return primeNumbersOnRange;
+	}
+	
 	public int getQuantity() {
 		quantity = getPrimeNumbersOnRange().size();
 		return quantity;
@@ -90,8 +123,6 @@ public class PrimeNumbers {
 	
 	@Override
 	public String toString() {
-		
-		primeNumbersOnRange = getPrimeNumbersOnRange();
 		
 		String primeNums = "";
 		
