@@ -3,42 +3,6 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-	public List<Integer> getNPrimeNumbers(int quantity){
-		
-		this.quantity = quantity;
-		
-		primeNumbersOnRange = new ArrayList<>();
-		
-		if (quantity >= 1) {
-			primeNumbersOnRange.add(2);
-		}
-		
-		int i = 3;
-		
-		while (quantity > 1) {
-			
-			boolean prime = true;
-			
-			for (int j = i-1; j>2; j--) {
-	
-				if (i%j == 0) {
-					prime = false;
-				}
-			}
-			
-			if (prime) {
-				primeNumbersOnRange.add(i);
-				quantity--;
-			}
-			
-			i+=2;
-		}
-		return primeNumbersOnRange;
-	}
-*/
-
-
 public class PrimeNumbersOnRange extends PrimeNumbers {
 
 	private int range;
@@ -87,7 +51,7 @@ public class PrimeNumbersOnRange extends PrimeNumbers {
 		
 		for (int prime : primeNumbersOnRange) {
 			
-			for (int i = 0; i<String.valueOf(range).length()-1 - String.valueOf(prime).length(); i++) {
+			for (int i = 0; i<String.valueOf(range).length() - String.valueOf(prime).length(); i++) {
 				primeNumbers+=" ";
 			}
 			
