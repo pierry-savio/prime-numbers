@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.PrimeNumbersOnRange;
+import util.StringWriter;
 
 public class Program {
 
@@ -11,19 +12,24 @@ public class Program {
 		
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
-	
-		System.out.print("Send a range: ");
+		StringWriter sw = new StringWriter(100);
+		
+		//sw.write("teste final man", true);
+		
+		sw.write("Send a range: ");
 		int range = scan.nextInt();
 		System.out.println();
 		
 		PrimeNumbersOnRange primeNumbersOnRange = new PrimeNumbersOnRange(range);
-		System.out.println("Primes:");
-		System.out.println("-----------------------------------------------------------------------------------------------");
-		System.out.println(primeNumbersOnRange);
-		System.out.println("-----------------------------------------------------------------------------------------------");
-		System.out.println("Range: " + primeNumbersOnRange.getRange());
-		System.out.println("Quantity: " + primeNumbersOnRange.getQuantity());
-		System.out.println("Density: " + primeNumbersOnRange.getDensity() + "%");
+		sw.write("Primes:", true);
+		sw.setDelay(1);
+		sw.write("-----------------------------------------------------------------------------------------------", true);
+		sw.write(primeNumbersOnRange.toString(), true);
+		sw.write("-----------------------------------------------------------------------------------------------", true);
+		sw.setDelay(100);
+		sw.write("Range: " + primeNumbersOnRange.getRange(),           true);
+		sw.write("Quantity: " + primeNumbersOnRange.getQuantity(),     true);
+		sw.write("Density: " + primeNumbersOnRange.getDensity() + "%", true);
 		
 		scan.close();
 	}
