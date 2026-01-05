@@ -23,9 +23,15 @@ public class Program {
 		PrimeNumbersOnRange primeNumbersOnRange = new PrimeNumbersOnRange(range);
 		sw.write("Primes:", true);
 		sw.setDelay(1);
-		sw.write("-----------------------------------------------------------------------------------------------", true);
+		for (int i = 0; i< (String.valueOf(range).length()+2)*16; i++) {
+			sw.write("-");
+		}
+		System.out.println();
 		sw.write(primeNumbersOnRange.toString(), true);
-		sw.write("-----------------------------------------------------------------------------------------------", true);
+		for (int i = 0; i< (String.valueOf(range).length()+2)*16; i++) {
+			sw.write("-");
+		}
+		System.out.println();
 		sw.setDelay(100);
 		sw.write("Range: " + primeNumbersOnRange.getRange(),           true);
 		sw.write("Quantity: " + primeNumbersOnRange.getQuantity(),     true);
